@@ -3,7 +3,7 @@
 Plain-text snapshot of both style guides. Every rule in this skill was checked against it.
 
 **The text itself is not in this repository.** Google's pages are CC BY 4.0, but the
-Microsoft pages carry no open licence, so neither set is redistributed here. Fetch your own
+Microsoft pages carry no open license, so neither set is redistributed here. Fetch your own
 copy first:
 
 ```bash

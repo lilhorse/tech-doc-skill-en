@@ -7,7 +7,7 @@ where Google is silent. Google wins every conflict, and the conflicts that actua
 output are listed in one table.
 
 Every rule was checked against the text of both guides rather than recalled. Rules that
-belong to neither guide are confined to a labelled section and marked as such.
+belong to neither guide are confined to a labeled section and marked as such.
 
 ## Install
 
@@ -49,7 +49,7 @@ to *name* a banned word reports findings that should be ignored.
 ## Sources
 
 `sources/` holds both guides as plain text. Google publishes its pages under CC BY 4.0.
-The Microsoft pages carry no open licence, so neither set is redistributed here. Run
+The Microsoft pages carry no open license, so neither set is redistributed here. Run
 `scripts/refresh_sources.sh` to fetch your own copy, about 900 KB.
 
 The text matters because summarized fetches proved unreliable while the rules were being
@@ -70,11 +70,16 @@ python3 eval/score.py verify         # before trusting an evaluation score
 cannot see a rule that is too strict or too lax. Both defects it has caught so far passed
 every unit test.
 
-## Credits
+## License
 
-The Google developer documentation style guide is licensed under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The Microsoft Writing Style
-Guide belongs to Microsoft.
+This skill is MIT licensed; see [LICENSE](LICENSE).
+
+That covers the rules, the checker, and the harness. It does not cover the style guides
+themselves, which are not redistributed here. The Google developer documentation style
+guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), and the
+Microsoft Writing Style Guide belongs to Microsoft.
+
+## Credits
 
 The layout follows [Fenng/tech-doc-style-chinese](https://github.com/Fenng/tech-doc-style-chinese),
 which does the same job for Chinese technical writing.

@@ -1,6 +1,6 @@
 # Word list
 
-Entries from the Google developer documentation style guide word list, plus a few Microsoft entries marked **(MS)** where Google is silent. Google wins any conflict. Anything not in either guide is confined to the last section and labelled as such.
+Entries from the Google developer documentation style guide word list, plus a few Microsoft entries marked **(MS)** where Google is silent. Google wins any conflict. Anything not in either guide is confined to the last section and labeled as such.
 
 ## Replace these
 
