@@ -1,0 +1,18 @@
+[
+ "Get started with the Widget Service",
+ "Authenticate a request",
+ "40%",
+ "192x192",
+ "IP allowlist",
+ "Android, iOS, and Windows",
+ "2026-04-15",
+ "The following table lists",
+ "To create a widget, follow these steps:",
+ "In the **Widgets** pane, click **New widget**",
+ "Optional: Enter a description.",
+ "If the key is missing, then the request fails",
+ "Widget Service API reference",
+ "The gateway validates each request",
+ "you must first get an API key",
+ "Verify the widget ID that the API returns"
+]

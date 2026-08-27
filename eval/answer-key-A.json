@@ -1,0 +1,158 @@
+[
+ {
+  "id": 1,
+  "page": "anthropomorphism",
+  "violation": "tells the splitter where a string should be broken",
+  "detect": "tells the splitter"
+ },
+ {
+  "id": 2,
+  "page": "anthropomorphism",
+  "violation": "The service sees a new device",
+  "detect": "\\bsees\\b"
+ },
+ {
+  "id": 3,
+  "page": "articles",
+  "violation": "Create VM instance (missing article)",
+  "detect": "Create VM instance"
+ },
+ {
+  "id": 4,
+  "page": "commas",
+  "violation": "missing comma before and joining two clauses",
+  "detect": "easier and they ensure"
+ },
+ {
+  "id": 5,
+  "page": "cross-references",
+  "violation": "Want more? Click here!",
+  "detect": "Click here"
+ },
+ {
+  "id": 6,
+  "page": "dashes",
+  "violation": "Example - This is an example",
+  "detect": "Example - "
+ },
+ {
+  "id": 7,
+  "page": "filenames",
+  "violation": "a .png file",
+  "detect": "a \\.png file"
+ },
+ {
+  "id": 8,
+  "page": "numbers",
+  "violation": "comma inside a decimal fraction",
+  "detect": "0\\.006,653"
+ },
+ {
+  "id": 9,
+  "page": "possessives",
+  "violation": "businesses' data",
+  "detect": "businesses' data"
+ },
+ {
+  "id": 10,
+  "page": "pronouns",
+  "violation": "ambiguous it",
+  "detect": "in the field, it doesn't change"
+ },
+ {
+  "id": 11,
+  "page": "pronouns",
+  "violation": "Set this to true",
+  "detect": "Set this to true"
+ },
+ {
+  "id": 12,
+  "page": "reference-verbs",
+  "violation": "imperative in API reference description",
+  "detect": "tasks\\.insert: Create a new task"
+ },
+ {
+  "id": 13,
+  "page": "slashes",
+  "violation": "and/or",
+  "detect": "and/or"
+ },
+ {
+  "id": 14,
+  "page": "slashes",
+  "violation": "c/o, w/ abbreviations",
+  "detect": "\\bc/o\\b|\\bw/ "
+ },
+ {
+  "id": 15,
+  "page": "tense",
+  "violation": "would then remove",
+  "detect": "would then remove"
+ },
+ {
+  "id": 16,
+  "page": "tone",
+  "violation": "please click",
+  "detect": "please click"
+ },
+ {
+  "id": 17,
+  "page": "voice",
+  "violation": "double passive with by you",
+  "detect": "is queried by you"
+ },
+ {
+  "id": 18,
+  "page": "word-list",
+  "violation": "As of this writing",
+  "detect": "As of this writing"
+ },
+ {
+  "id": 19,
+  "page": "word-list",
+  "violation": "between multiple clients",
+  "detect": "between multiple clients"
+ },
+ {
+  "id": 20,
+  "page": "word-list",
+  "violation": "Big Endian",
+  "detect": "Big Endian"
+ },
+ {
+  "id": 21,
+  "page": "word-list",
+  "violation": "Uncheck",
+  "detect": "\\bUncheck\\b"
+ },
+ {
+  "id": 22,
+  "page": "word-list",
+  "violation": "currently",
+  "detect": "isn't currently supported"
+ },
+ {
+  "id": 23,
+  "page": "word-list",
+  "violation": "desire",
+  "detect": "that you desire"
+ },
+ {
+  "id": 24,
+  "page": "word-list",
+  "violation": "this article (self-reference)",
+  "detect": "in this article"
+ },
+ {
+  "id": 25,
+  "page": "word-list",
+  "violation": "version 2.2 or higher",
+  "detect": "2\\.2 or higher"
+ },
+ {
+  "id": 26,
+  "page": "word-list",
+  "violation": "and so on",
+  "detect": "and so on"
+ }
+]
