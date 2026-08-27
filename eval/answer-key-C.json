@@ -1,0 +1,83 @@
+{
+ "expect_variety": "nz",
+ "note": "The document is uniformly US-spelled. Only the project file says en-NZ.",
+ "us_pattern": "\\b(organiz\\w+|synchroniz\\w+|analyz\\w+|customiz\\w+|authoriz\\w+|behaviors?|colors?|centers?|modeled|canceled|catalogs?|license key)\\b",
+ "nz_pattern": "\\b(organis\\w+|synchronis\\w+|analys\\w+|customis\\w+|authoris\\w+|behaviours?|colours?|centres?|modelled|cancelled|catalogues?|licence key)\\b",
+ "exempt": "`[^`]*`|Authorization|LICENSE_KEY|Automatically synchronize",
+ "must_survive_terms": [
+  "courier",
+  "consignment"
+ ],
+ "must_fix": [
+  {
+   "id": 1,
+   "what": "title case + 句末句号",
+   "detect": "Getting Started With The Consignment API\\."
+  },
+  {
+   "id": 2,
+   "what": "As of this writing",
+   "detect": "As of this writing"
+  },
+  {
+   "id": 3,
+   "what": "Please note",
+   "detect": "Please note"
+  },
+  {
+   "id": 4,
+   "what": "50 percent",
+   "detect": "50 percent"
+  },
+  {
+   "id": 5,
+   "what": "被动 is analysed/analyzed by",
+   "detect": "is analy[sz]ed by"
+  },
+  {
+   "id": 6,
+   "what": "en dash",
+   "detect": "–"
+  },
+  {
+   "id": 7,
+   "what": "序数 3rd",
+   "detect": "3rd column"
+  },
+  {
+   "id": 8,
+   "what": "e.g.",
+   "detect": "e\\.g\\."
+  },
+  {
+   "id": 9,
+   "what": "and/or",
+   "detect": "and/or"
+  },
+  {
+   "id": 10,
+   "what": "Uncheck",
+   "detect": "Uncheck"
+  },
+  {
+   "id": 11,
+   "what": "please click",
+   "detect": "[Pp]lease click"
+  },
+  {
+   "id": 12,
+   "what": "Set this to true",
+   "detect": "Set this to true"
+  },
+  {
+   "id": 13,
+   "what": "click here",
+   "detect": "click here"
+  },
+  {
+   "id": 14,
+   "what": "title case 二级标题",
+   "detect": "Configuring A Consignment"
+  }
+ ]
+}

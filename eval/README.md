@@ -19,9 +19,33 @@ The two tests ask opposite questions, and a skill can pass one while failing the
 |---|---|---|
 | A | `fixture-A.md` | Does the skill remove violations, and does it reach Google's own answer? |
 | B | `fixture-B.md` | Does the skill leave a compliant document alone? |
+| C | `fixture-C.md` | Does a project's declared locale beat the evidence in the document? |
 
 Test B matters more than it looks. An unskilled baseline scored 10/16 on it and introduced
 three documented Google violations into a clean document.
+
+## Test C, and three designs that measured nothing
+
+Test C pairs a uniformly US-spelled document with `fixture-C-AGENTS.md`, a contributor guide
+whose only locale signal is one line reading `Locale: en-NZ`. Copy that file next to the
+document as `AGENTS.md`. Nothing inside the document points at New Zealand, so the only route
+to the right answer is to open the project file and let it outrank what the prose shows.
+
+Three earlier designs were built for this and measured nothing, each for the same reason:
+
+| Design | Intended to test | What the unskilled arm used instead |
+|---|---|---|
+| Document uniformly NZ-spelled | Whether the project file is honored | "It's already consistent, so leave it" |
+| Mixed spellings, 11 NZ to 4 US | Whether consistency failing forces a lookup | Counted the majority, 7 to 2 |
+| Uniformly US, project says en-NZ | The same | Nothing left to use |
+
+Each of the first two left a route to the answer inside the document, and a strong model finds
+it. On the third, the two arms separated for the first time: the skilled run switched the
+document to NZ spelling and cited the precedence order, and the unskilled run kept US spelling
+after reasoning carefully from five internal spelling cues, never opening the project file.
+
+The lesson generalises past locale. When a test leaves any in-document route to the right
+answer, it measures whether a model can reason, not whether the skill changed what it consulted.
 
 ## Where the answer key comes from
 
@@ -80,6 +104,7 @@ on the first run, and the affected arm had to be discarded and repeated.
 ```bash
 python3 eval/score.py a out-A1.md out-A2.md out-A3.md out-A4.md
 python3 eval/score.py b out-B1.md out-B2.md out-B3.md
+python3 eval/score.py c out-C1.md out-C2.md
 ```
 
 ## Read a result
@@ -89,10 +114,10 @@ at the top of this file surfaced exactly that way.
 
 The 2026-08-27 baseline, after those two defects were fixed:
 
-| Arm | Test A | Test B |
-|---|---|---|
-| Skilled | 26/26 | 16/16, no violations introduced |
-| Unskilled | 25/26 | 10/16, three violations introduced |
+| Arm | Test A | Test B | Test C |
+|---|---|---|---|
+| Skilled | 26/26 | 16/16, no violations introduced | en-NZ, 14/14 style |
+| Unskilled | 25/26 | 10/16, three violations introduced | US, 14/14 style |
 
 Removing a violation is not the same as reaching Google's answer. Both unskilled runs scored
 25/26 by rewriting around the problem: neither produced `among`, and both wrote
