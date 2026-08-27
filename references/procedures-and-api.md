@@ -10,7 +10,7 @@ Source of record: Google developer documentation style guide.
 
 ## Numbered steps
 
-- Number the steps of a sequence. Write a single-step procedure as an ordinary sentence, not a one-item list: "To clear the log, click **Clear logcat**."
+- Number the steps of a sequence. When a procedure is only one step, write it as one sentence and format it as a bulleted list: "To clear (flush) the entire log, click **Clear logcat**."
 - Start each step with an imperative verb: *Click*, *Run*, *Download*, *Connect*.
 - One action per step. Small sequential actions in the same place may combine: `Click **File > New > Document**`.
 - State the location before the action: "In Google Docs, click **File**", not "Click **File** in Google Docs".

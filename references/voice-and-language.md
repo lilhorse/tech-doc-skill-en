@@ -100,7 +100,7 @@ Google's rules first. Where Google is silent, Microsoft's bias-free communicatio
 | Use | Instead of |
 |---|---|
 | complicated, complex, baffling, unexpected (inanimate objects only) | crazy, insane |
-| final check, quick check, confidence check | sanity check |
+| quick check, confidence check, preliminary check | sanity check |
 | placeholder | dummy variable |
 | slows down, degrades | cripples |
 | doesn't respond, stops responding | hangs |
@@ -125,9 +125,9 @@ Google prefers `primary/replica`; Microsoft prefers `primary/subordinate`. Follo
 
 ### Violent and militaristic language
 
-Avoid *kill*, *abort*, *hit*, *hang*, and military metaphors. Use *stop*, *exit*, *cancel*, *end*, *click*, *press*, *doesn't respond*.
+Avoid *kill*, *abort*, *hit*, *hang*, and military metaphors. Use *stop*, *exit*, *cancel*, *end*, *click*, *press*, *not responding*.
 
-*terminate* and *execute* are the exception Google names itself: where the term carries a specific technical meaning with no accurate synonym, keep it. Elsewhere, *run* is the plainer word.
+Each of these has a narrow technical carve-out in Google's own word list: *abort* is a Linux signal, *kill* survives in command-line syntax, and *terminate* and *execute* keep their meanings in telephony, networking, and SQL. Outside those, use the plain word.
 
 ### Examples and personas
 

@@ -189,8 +189,7 @@ To establish conventions for a project, adapt [Project overrides](references/pro
 
    It skips code fences, code spans, front matter, and link targets. It can't tell a term being used
    from one being mentioned, so a document that has to *name* a banned word reports findings. Ignore
-   those and keep the correct formatting: Google mentions a term parenthetically on first use ("an
-   allowlist (sometimes called a whitelist)"), and a word-as-word takes italics.
+   those and keep the correct formatting; a word used as a word takes italics.
 
 ## Final checklist
 

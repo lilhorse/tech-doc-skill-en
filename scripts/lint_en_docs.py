@@ -39,7 +39,7 @@ CI = re.IGNORECASE
 RULES = [
     ("banned-word", "warning", r"\babort(s|ed|ing)?\b", "Violent metaphor. Use stop, exit, cancel, or end.", CI, False),
     ("banned-word", "warning", r"\bkill(s|ed|ing)?\b", "Violent metaphor. Use stop, exit, cancel, or end.", CI, False),
-    ("banned-word", "warning", r"\b(hangs?|hung)\b", "Use stops responding or doesn't respond.", CI, False),
+    ("banned-word", "warning", r"\b(hangs?|hung)\b", "Use stop responding or not responding.", CI, False),
     ("banned-word", "warning", r"\bblack ?list(s|ed|ing)?\b", "Use denylist or blocklist.", CI, False),
     ("banned-word", "warning", r"\bwhite ?list(s|ed|ing)?\b", "Use allowlist.", CI, False),
     ("banned-word", "warning", r"\bmaster[/ -]slave\b", "Use primary/replica, main, or controller.", CI, False),

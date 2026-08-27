@@ -4,8 +4,8 @@ Source of record: Google developer documentation style guide. Where this file ma
 
 ## Capitalization
 
-- Sentence case for page titles, section headings, table headers, list items, and any UI text you write.
-- When you document existing UI, reproduce its label exactly, whatever its case: the **Save All** button stays **Save All**. Capitalize the first word and proper nouns only.
+- Sentence case for page titles, section headings, table headers, list items, and any UI text you write. Capitalize the first word and proper nouns only.
+- When you document existing UI, follow the capitalization shown on the page. If a label is all uppercase, or a set of labels is inconsistent, use sentence case instead: `Click **Refresh**`, not `Click **REFRESH**`.
 - Don't use title case, and don't capitalize a common noun to make it look important.
 - Match the capitalization of product names, API names, and code identifiers exactly as they're defined.
 
@@ -18,8 +18,8 @@ Source of record: Google developer documentation style guide. Where this file ma
 - No period or colon at the end of a heading.
 - No links inside headings.
 - No numbers to convey sequence—the hierarchy conveys it.
-- Don't stack a heading directly on another heading with no text between them.
-- Don't stack a heading directly on another heading. Introduce a run of subsections with a sentence: "The following sections describe each step."
+- Don't use empty headings. Every heading is followed by content.
+- Don't refer to a group of sections as "this section" or "these sections"; both are ambiguous. Introduce a run of lower-level sections with "the following sections": "The following sections describe the recommended steps."
 
 ## Lists
 
@@ -29,7 +29,7 @@ Source of record: Google developer documentation style guide. Where this file ma
 | Bulleted | A set with no meaningful order |
 | Description | Terms paired with definitions or explanations |
 
-- A single item isn't a list.
+- A single item isn't a list. The one exception is a single-step procedure, which Google formats as a bulleted list.
 - Introduce a list with a complete sentence. Use a colon when the list follows immediately.
 - Keep items parallel: same syntax, same grammatical shape.
 - Capitalize the first word of each item unless case is significant.
