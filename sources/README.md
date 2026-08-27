@@ -1,7 +1,18 @@
 # Source snapshot
 
-Plain-text snapshot of both style guides, fetched 2026-08-27. Every rule in this skill
-was checked against these files.
+Plain-text snapshot of both style guides. Every rule in this skill was checked against it.
+
+**The text itself is not in this repository.** Google's pages are CC BY 4.0, but the
+Microsoft pages carry no open licence, so neither set is redistributed here. Fetch your own
+copy first:
+
+```bash
+scripts/refresh_sources.sh
+```
+
+That writes 70 Google pages and 9 Microsoft pages into the directories below, about 900 KB.
+
+The script fills these:
 
 | Directory | Contents |
 |---|---|

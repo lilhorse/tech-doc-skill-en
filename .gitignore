@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+# Fetched style guide text. Google is CC BY 4.0; Microsoft is not openly
+# licensed, so neither is redistributed here. Run scripts/refresh_sources.sh.
+sources/google/
+sources/microsoft/

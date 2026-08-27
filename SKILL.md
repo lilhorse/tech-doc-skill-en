@@ -16,8 +16,9 @@ Don't attribute a Microsoft rule to Google. When a visible choice rests on Micro
 
 ## Check a rule
 
-`sources/` holds a plain-text snapshot of both guides, fetched 2026-08-27. Every rule here was
-checked against it. Grep it while you edit, not only afterwards. Whenever you are about to change a word or a
+`sources/` holds a plain-text snapshot of both guides. Every rule here was checked against it.
+If the directory is empty, run `scripts/refresh_sources.sh` once; the text is not redistributed
+with this skill. Grep it while you edit, not only afterwards. Whenever you are about to change a word or a
 construction that these reference files don't name, the snapshot decides it, not your recall:
 
 ```
