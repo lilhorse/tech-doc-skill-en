@@ -214,6 +214,20 @@ class AuditRegressionTests(unittest.TestCase):
         self.assertTrue(found)
         self.assertEqual(found[0].level, "info")
 
+    def test_unsourced_rules_are_advisory(self):
+        """Rules with no entry in either guide report at info, not warning,
+        so a warning-level pass only surfaces sourced rules."""
+        for text, rule in [("This allows you to scale.", "wordy"),
+                           ("The fix is obvious.", "condescending")]:
+            found = [f for f in lint_text(text) if f.rule == rule]
+            self.assertTrue(found, rule)
+            self.assertEqual(found[0].level, "info", rule)
+
+    def test_sourced_condescension_stays_a_warning(self):
+        found = [f for f in lint_text("Simply restart it.") if f.rule == "condescending"]
+        self.assertTrue(found)
+        self.assertEqual(found[0].level, "warning")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
