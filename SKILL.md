@@ -1,16 +1,18 @@
 ---
 name: tech-doc-style-english
-description: Use when writing, rewriting, editing, proofreading, or reviewing English technical content—developer docs, API reference, READMEs, release notes, how-to guides, runbooks, troubleshooting, error messages, UI text, or Markdown docs—and when a draft reads like marketing copy, is wordy or inconsistent, or was translated into English. Applies Google developer documentation style as the primary authority and the Microsoft Writing Style Guide where Google is silent.
+description: Use when writing, rewriting, editing, proofreading, or reviewing English technical content—developer docs, API reference, READMEs, release notes, how-to guides, runbooks, troubleshooting, error messages, UI text, or Markdown docs—and when a draft reads like marketing copy, is wordy or inconsistent, or was translated into English. Applies Google developer documentation style first, then the Microsoft Writing Style Guide where Google is silent, with the target project's own conventions above both.
 ---
 
 # English technical documentation and product copy style
 
 ## Style authority
 
-1. **Google developer documentation style guide** (https://developers.google.com/style) is the primary authority.
-2. **Microsoft Writing Style Guide** (https://learn.microsoft.com/style-guide) applies only where Google is silent.
-3. **When the two conflict, follow Google.** See [Conflicts between Google and Microsoft](#conflicts-between-google-and-microsoft).
-4. Target-project conventions override both. See [Project overrides](#project-overrides).
+This list is in precedence order. Each item applies only where everything above it is silent.
+
+1. **The target project's own conventions.** Its glossary, locale, and instruction files beat both guides. See [Project overrides](#project-overrides).
+2. **Google developer documentation style guide** (https://developers.google.com/style).
+3. **Microsoft Writing Style Guide** (https://learn.microsoft.com/style-guide), only where Google says nothing.
+4. **Where Google and Microsoft conflict, follow Google.** See [Conflicts between Google and Microsoft](#conflicts-between-google-and-microsoft).
 
 Don't attribute a Microsoft rule to Google. When a visible choice rests on Microsoft because Google is silent, say so in your review notes.
 
@@ -224,6 +226,8 @@ To establish conventions for a project, adapt [Project overrides](references/pro
 - Headings, body, cards, and buttons don't repeat each other
 - Code, paths, fields, commands, and quotations are byte-identical to the source
 - Link text describes its destination
+- The project's own conventions were checked, and followed wherever they differ from the guides
+- No spelling was changed to US English in a project that has set another locale
 - Google won every conflict with Microsoft
 
 ## Reference routing

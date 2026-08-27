@@ -6,6 +6,9 @@ first, and the [Microsoft Writing Style Guide](https://learn.microsoft.com/style
 where Google is silent. Google wins every conflict, and the conflicts that actually change
 output are listed in one table.
 
+A target project's own conventions outrank both. Locale is the usual case: Google requires US
+English, and a project that has chosen otherwise keeps its choice.
+
 Every rule was checked against the text of both guides rather than recalled. Rules that
 belong to neither guide are confined to a labeled section and marked as such.
 
