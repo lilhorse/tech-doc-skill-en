@@ -71,12 +71,16 @@ Don't use *should* for a requirement. Readers treat it as optional, and Google's
 
 ## Anthropomorphism
 
-Systems don't want, know, think, see, or decide. Name the mechanism instead.
+Systems don't want, know, think, see, tell, or decide. Name what the thing actually does:
 
 | Recommended | Not recommended |
 |---|---|
+| A `Delimiter` object specifies where to split a string. | A `Delimiter` object tells the splitter where a string should be broken. |
+| The PC detects a new device. | The PC sees a new device. |
 | The scheduler retries the job three times. | The scheduler decides to try again. |
 | The parser rejects input longer than 4 KB. | The parser doesn't like long input. |
+
+One object doesn't *tell* another object anything. Use *specifies*, *sets*, or *passes*.
 
 ## Write for a global audience
 

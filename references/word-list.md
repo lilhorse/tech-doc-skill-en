@@ -59,6 +59,7 @@ These are reserved rather than banned:
 | dropdown, drop-down | Don't use as a noun for a menu. Write *list* or *menu*. |
 | should | Generally avoid: ambiguous by definition. Use *must* for a requirement, *can* for an ability. |
 | appears | Fine for something a person perceives; not for UI that *is displayed*. |
+| between, among | *between* for two or more distinct things; *among* for things in a group or not distinct: shared *among* multiple apps. |
 | once | Means both "one time" and "after". Use *after* when that's the meaning. |
 | since | Use for time. Use *because* for causation. |
 | may | Reserve for official policy and legal wording. Use *can* for permission or ability, *might* for possibility. |

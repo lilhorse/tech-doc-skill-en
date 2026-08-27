@@ -161,6 +161,8 @@ Choose the notice from the severity of what can happen:
 - Commas and periods go inside a closing quotation mark, unless that would change a literal string in code font.
 - Technical writing uses quotation marks sparingly outside of code.
 - Singular noun ending in s takes `'s`: the class's method. Plural noun ending in s takes a bare apostrophe.
+- If a possessive reads awkwardly, rewrite to drop it: `Analyze the business data`, not `Analyze the businesses' data`; `the rule that the Federal Trade Commission (FTC) issued`, not `the Federal Trade Commission's (FTC's) rule`.
+- Don't use a possessive for a product, feature, or company name when you describe what it does. Use the name as a modifier, or rephrase with *of*.
 - Don't make a possessive out of a code element, a product name, or a feature name. Write "the value of the `ADDRESS` constant".
 
 ## Images

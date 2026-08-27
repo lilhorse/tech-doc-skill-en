@@ -17,8 +17,8 @@ Don't attribute a Microsoft rule to Google. When a visible choice rests on Micro
 ## Check a rule
 
 `sources/` holds a plain-text snapshot of both guides, fetched 2026-08-27. Every rule here was
-checked against it. When you're about to rely on a rule, or you disagree with one, grep the
-snapshot instead of recalling the guide:
+checked against it. Grep it while you edit, not only afterwards. Whenever you are about to change a word or a
+construction that these reference files don't name, the snapshot decides it, not your recall:
 
 ```
 grep -ri "serial comma" ~/.claude/skills/tech-doc-style-english/sources/
@@ -56,6 +56,7 @@ Never trade a higher item for a lower one—not for a shorter sentence, not for 
 - Don't turn hedged statements (*may*, *plans to*, *typically*) into certainties.
 - When information is missing, keep the original meaning or mark it `[TBD]`. Don't fill the gap yourself.
 - When a source value is itself ambiguous (`04/06/2026` is either April 6 or June 4), keep the original string verbatim and mark it `[TBD]`. Normalizing it to one reading is filling the gap yourself.
+- A typographic error is not an ambiguity. `$0.006,653` has exactly one reading and a stray comma, so fix it. Reserve `[TBD]` for values where two readings are genuinely available.
 - When editing quotations, regulations, contracts, verbatim error strings, or user-supplied fixed copy, preserve the original and list suggestions separately.
 
 Examples:
@@ -200,6 +201,8 @@ To establish conventions for a project, adapt [Project overrides](references/pro
 4. Reorder information, paragraphs, headings, and lists.
 5. Fix voice, tense, terminology, punctuation, capitalization, and spacing.
 6. Re-check against the source: facts, conditions, scope of negation, causation, and degree of certainty.
+   For any call these files don't cover, grep `sources/` before you decide. The reference files are a
+   summary of those pages, not a replacement for them.
 7. Run the linter and judge each finding. It flags candidates, not verdicts.
 
    ```

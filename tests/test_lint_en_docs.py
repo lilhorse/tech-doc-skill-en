@@ -228,6 +228,15 @@ class AuditRegressionTests(unittest.TestCase):
         self.assertTrue(found)
         self.assertEqual(found[0].level, "warning")
 
+    def test_comma_inside_decimal_is_flagged(self):
+        self.assertIn("decimal-comma", rules("The price is $0.006,653 per vCPU hour."))
+
+    def test_thousands_separator_is_clean(self):
+        self.assertNotIn("decimal-comma", rules("The cluster holds 1,532,784 rows."))
+
+    def test_plain_decimal_is_clean(self):
+        self.assertNotIn("decimal-comma", rules("The price is $0.006653 per vCPU hour."))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

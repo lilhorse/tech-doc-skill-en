@@ -94,6 +94,7 @@ RULES = [
      "Ambiguous date. Use ISO 8601 or spell out the month.", 0, False),
     ("ordinal-numeral", "warning", r"\b\d+(st|nd|rd|th)\b", "Spell out ordinals: first, fifth, twenty-first.", CI, False),
     ("percent-word", "warning", r"\b\d+\s+percent\b", "Google: use a numeral plus %, no space (40%).", CI, False),
+    ("decimal-comma", "warning", r"\b\d+\.\d+,\d", "No punctuation to the right of a decimal point: 0.006653.", 0, False),
     ("dimensions", "warning", r"\b\d{2,5}\s*×\s*\d{2,5}\b|\b\d{2,5}\s+x\s*\d{2,5}\b",
      "Google: dimensions take a lowercase x and no spaces (1280x1024).", 0, False),
     ("unit-space", "warning", r"\b\d+(?:\.\d+)?(GB|MB|KB|TB|Mbps|Gbps|ms|kg|mm|cm|km)\b",
