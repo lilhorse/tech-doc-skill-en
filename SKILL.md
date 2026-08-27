@@ -14,6 +14,18 @@ description: Use when writing, rewriting, editing, proofreading, or reviewing En
 
 Don't attribute a Microsoft rule to Google. When a visible choice rests on Microsoft because Google is silent, say so in your review notes.
 
+## Checking a rule
+
+`sources/` holds a plain-text snapshot of both guides, fetched 2026-08-27. Every rule here was
+checked against it. When you're about to rely on a rule, or you disagree with one, grep the
+snapshot instead of recalling the guide:
+
+```
+grep -ri "serial comma" ~/.claude/skills/tech-doc-style-english/sources/
+```
+
+The snapshot is a convenience, not the authority. See `sources/README.md`.
+
 ## Scope
 
 Use this skill for English technical content:
