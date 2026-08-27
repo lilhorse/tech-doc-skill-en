@@ -43,6 +43,7 @@ Never trade a higher item for a lower one—not for a shorter sentence, not for 
 - Don't drop prerequisites, scope, exceptions, risks, safety warnings, compatibility notes, or failure handling.
 - Don't turn hedged statements (*may*, *plans to*, *typically*) into certainties.
 - When information is missing, keep the original meaning or mark it `[TBD]`. Don't fill the gap yourself.
+- When a source value is itself ambiguous (`04/06/2026` is either April 6 or June 4), keep the original string verbatim and mark it `[TBD]`. Normalizing it to one reading is filling the gap yourself.
 - When editing quotations, regulations, contracts, verbatim error strings, or user-supplied fixed copy, preserve the original and list suggestions separately.
 
 Examples:
@@ -82,7 +83,7 @@ Examples:
 - Use present tense. Reserve *will* for genuinely later or asynchronous events. Cut *would*, *should*, and *could* hypotheticals.
 - Be conversational but professional: no exclamation marks, humor, idioms, pop-culture references, or internet slang.
 - Delete *easy*, *simple*, *simply*, *just*, *obvious*, and *of course*. They tell readers how to feel about a task that may not be going well for them.
-- Omit *please* in instructions.
+- Omit *please* from ordinary steps. Both guides keep it where the request genuinely inconveniences the reader or the product is at fault.
 - Put conditions before instructions: "To view the document, click **View**", not "Click **View** to view the document".
 - Don't pre-announce unreleased features.
 
@@ -90,7 +91,7 @@ Examples:
 
 - Front-load. State what the thing is, who it's for, what to do, and where to go next.
 - One idea per paragraph. One clear main clause per sentence; don't stack conditions, actions, and exceptions.
-- Keep sentences short—the primary lever for both scanning and translation.
+- Keep sentences short—the primary lever for both scanning and translation. Treat 32 words as the point where a sentence needs a second look.
 - Keep *that* in relative clauses and *then* in if-then constructions: "rules that you defined", "If the key isn't found, then the default is returned".
 - Use at most two noun modifiers in a row. Repeat a word when repeating clarifies.
 - Replace an ambiguous *it*, *this*, or *these* with the actual noun.
@@ -114,17 +115,18 @@ Follow the Google column. This table lists the differences that actually change 
 
 | Topic | Follow Google | Microsoft says (don't apply here) |
 |---|---|---|
-| En dashes | Don't use. Use a hyphen or *to*: `2012-2016`, `from 9 to 17` | En dash for ranges of numbers and dates: `2015–2017` |
+| En dashes | Don't use. Use a hyphen or *to*: `2012-2016`, `from 9 to 17` | *from X through Y* in prose; en dash for page ranges or tight space: `2016–2020` |
 | Percentages | Numeral plus `%`, no space: `40%` | Numeral plus the word: `50 percent` |
 | Dimensions | No spaces, lowercase x: `192x192` | Multiplication sign with spaces: `1280 × 1024` |
-| *please* | Omit it in instructions | Allowed when the request is inconvenient or the product is at fault |
 | *master/slave* | `primary/replica`, `main`, `controller` | `primary/subordinate` |
-| Numeric-only dates | ISO 8601: `2026-04-15` | UI-style numeric dates such as `12/1/17` |
+| Numeric-only dates | ISO 8601: `2026-04-15` | Spell out the month; numeric form only in locale-aware UI |
 | Register | Conversational but professional; no ad voice | "Write like you speak"; ad-style brevity ("Ready to buy? Contact us.") |
 
-Both guides agree on these, and drafts get them wrong often enough to check: sentence case headings, serial comma, no spaces around em dashes, spell out ordinals (`first`, not `1st`), spell out zero through nine and use numerals for 10 and above, and no periods at the end of headings.
+Both guides agree on these, and drafts get them wrong often enough to check: sentence case headings, serial comma, no spaces around em dashes, spell out ordinals (`first`, not `1st`), spell out zero through nine and use numerals for 10 and above, and no periods at the end of headings. They agree on *please* too: omit it from ordinary steps, and keep it where the request genuinely inconveniences the reader or the product is at fault.
 
-Microsoft is the right fallback where Google says little: bias-free communication term tables, global communications, and consumer-facing UI and marketing copy.
+Microsoft is the right fallback where Google says little: consumer-facing UI and marketing copy, Windows and desktop terminology, and A-Z term entries Google's word list doesn't carry. Google is not silent on inclusive language or global audiences, so don't reach for Microsoft there.
+
+"Landing pages" in Scope means developer landing pages, and those follow Google. A consumer marketing page falls outside this skill; say so rather than quietly switching register.
 
 ## By content type
 
@@ -150,6 +152,14 @@ Read and apply [Procedures and API reference](references/procedures-and-api.md).
 
 Details: [Procedures and API reference](references/procedures-and-api.md).
 
+### Release notes and changelogs
+
+- Group entries by change type: new, changed, deprecated, removed, fixed, security.
+- Lead each entry with what changed for the reader, not the internal component that changed.
+- Give the version and the date in the standard date format.
+- State the action a reader has to take, and link to the migration path.
+- Don't announce unreleased work.
+
 ### UI text and error messages
 
 - A button states the action and its object. It doesn't repeat the page title.
@@ -171,9 +181,16 @@ To establish conventions for a project, adapt [Project overrides](references/pro
 4. Reorder information, paragraphs, headings, and lists.
 5. Fix voice, tense, terminology, punctuation, capitalization, and spacing.
 6. Re-check against the source: facts, conditions, scope of negation, causation, and degree of certainty.
-7. Run `scripts/lint_en_docs.py` and judge each warning. It flags candidates, not verdicts.
-   The linter skips code font, code fences, front matter, and link targets, so a document that has to
-   *name* a banned term should put it in code font rather than suppress the rule.
+7. Run the linter and judge each finding. It flags candidates, not verdicts.
+
+   ```
+   python3 ~/.claude/skills/tech-doc-style-english/scripts/lint_en_docs.py --min-level warning FILE
+   ```
+
+   It skips code fences, code spans, front matter, and link targets. It can't tell a term being used
+   from one being mentioned, so a document that has to *name* a banned word reports findings. Ignore
+   those and keep the correct formatting: Google mentions a term parenthetically on first use ("an
+   allowlist (sometimes called a whitelist)"), and a word-as-word takes italics.
 
 ## Final checklist
 
@@ -189,8 +206,8 @@ To establish conventions for a project, adapt [Project overrides](references/pro
 
 ## Reference routing
 
-- Tone, person, voice, tense, translation-readiness, inclusive language: read [Voice and language](references/voice-and-language.md)
-- Capitalization, punctuation, headings, lists, links, code font, UI elements, numbers, dates: read [Mechanics and formatting](references/mechanics-and-formatting.md)
+- Tone, person, voice, tense, must/should/can, anthropomorphism, translation-readiness, inclusive language: read [Voice and language](references/voice-and-language.md)
+- Capitalization, punctuation, headings, lists, tables, notices, code blocks, links, code font, UI elements, numbers, dates, units, abbreviations: read [Mechanics and formatting](references/mechanics-and-formatting.md)
 - A specific word to keep or replace: read [Word list](references/word-list.md)
 - Numbered steps, prerequisites, API reference descriptions, error text: read [Procedures and API reference](references/procedures-and-api.md)
 - Establishing a target project's own conventions: read [Project overrides](references/project-overrides-example.md)

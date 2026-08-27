@@ -25,6 +25,7 @@ class MaskingTests(unittest.TestCase):
     def test_frontmatter_is_ignored(self):
         text = "---\nname: kill-switch\ndescription: please read\n---\n\nBody text.\n"
         self.assertNotIn("banned-word", rules(text))
+        self.assertNotIn("please", rules(text))
 
     def test_link_target_is_ignored(self):
         self.assertNotIn("banned-word", rules("See [the guide](https://example.com/e.g./via)."))
@@ -42,13 +43,13 @@ class WordRuleTests(unittest.TestCase):
         self.assertIn("condescending", rules("Simply restart the service."))
 
     def test_please(self):
-        self.assertIn("banned-word", rules("Please click Save."))
+        self.assertIn("please", rules("Please click Save."))
 
     def test_latin_abbreviation(self):
         self.assertIn("banned-word", rules("Use a scalar type, e.g. an integer."))
 
     def test_the_user(self):
-        self.assertIn("banned-word", rules("The user must sign in first."))
+        self.assertIn("the-user", rules("The user must sign in first."))
 
 
 class MechanicsTests(unittest.TestCase):
@@ -88,7 +89,12 @@ class HeadingTests(unittest.TestCase):
         self.assertIn("heading-punctuation", rules("## Create an instance.\n"))
 
     def test_title_case_heading(self):
-        self.assertIn("heading-case", rules("## Create An Instance Now\n"))
+        self.assertIn("heading-case", rules("## Create An Instance Right Now\n"))
+
+    def test_short_title_case_heading_is_a_known_miss(self):
+        """Two capitalized words is under the threshold that spares
+        'Deploy to Google Cloud'. Documented tradeoff, not a regression."""
+        self.assertNotIn("heading-case", rules("## Create An Instance Now\n"))
 
     def test_sentence_case_heading_is_clean(self):
         self.assertNotIn("heading-case", rules("## Create an instance\n"))
@@ -110,8 +116,103 @@ class SentenceTests(unittest.TestCase):
 class PositionTests(unittest.TestCase):
     def test_line_numbers_survive_masking(self):
         text = "Line one.\n\n```\nkill\n```\n\nPlease stop.\n"
-        finding = next(f for f in lint_text(text) if f.rule == "banned-word")
+        finding = next(f for f in lint_text(text) if f.rule == "please")
         self.assertEqual(finding.line, 7)
+
+
+class AuditRegressionTests(unittest.TestCase):
+    """Every case here is a defect found by the 2026-08-27 adversarial audit.
+    The false positives all contradicted rules the skill itself teaches."""
+
+    def test_recommended_time_format_is_not_flagged(self):
+        self.assertNotIn("am-pm", rules("The job runs at 3 PM daily."))
+
+    def test_lowercase_meridiem_is_flagged(self):
+        self.assertIn("am-pm", rules("The job runs at 3pm."))
+
+    def test_missing_space_before_meridiem_is_flagged(self):
+        self.assertIn("am-pm", rules("The job runs at 3PM."))
+
+    def test_thematic_breaks_are_not_treated_as_front_matter(self):
+        text = "Intro.\n\n---\n\nSection one says please kill the job.\n\n---\n\nEnd.\n"
+        self.assertIn("banned-word", rules(text))
+
+    def test_real_front_matter_is_still_skipped(self):
+        text = "---\nname: kill-switch\ndescription: please read\n---\n\nBody.\n"
+        self.assertNotIn("banned-word", rules(text))
+
+    def test_nested_list_items_are_checked(self):
+        self.assertIn("banned-word", rules("- Top item\n    - Nested says please kill it.\n"))
+
+    def test_inline_code_does_not_fake_a_double_space(self):
+        self.assertNotIn("double-space", rules("Run the setup script. `gcloud init` creates the project."))
+
+    def test_real_double_space_is_flagged(self):
+        self.assertIn("double-space", rules("First sentence.  Second sentence."))
+
+    def test_proper_noun_heading_is_not_title_case(self):
+        self.assertNotIn("heading-case", rules("## Deploy to Google Cloud\n"))
+
+    def test_real_title_case_is_flagged(self):
+        self.assertIn("heading-case", rules("## Getting Started With The Widget API\n"))
+
+    def test_user_agent_is_not_the_reader(self):
+        self.assertNotIn("the-user", rules("The user agent string is logged."))
+
+    def test_the_user_as_reader_is_flagged(self):
+        self.assertIn("the-user", rules("The user must sign in first."))
+
+    def test_us_timezone_is_not_first_person(self):
+        self.assertNotIn("first-person", rules("Use US and Canadian Pacific Standard Time (UTC-8)."))
+
+    def test_organizational_we_is_flagged_at_info(self):
+        self.assertIn("first-person", rules("We recommend rotating keys."))
+
+    def test_product_name_is_not_condescending(self):
+        self.assertNotIn("condescending", rules("Amazon Simple Storage Service stores objects."))
+
+    def test_lowercase_simply_is_flagged(self):
+        self.assertIn("condescending", rules("Simply restart the service."))
+
+    def test_resource_utilization_is_allowed(self):
+        self.assertNotIn("utilize", rules("When CPU utilization exceeds 75%, add a node."))
+
+    def test_utilize_as_verb_is_flagged(self):
+        self.assertIn("utilize", rules("You can utilize the cache."))
+
+    def test_serial_comma_heuristic_was_removed(self):
+        self.assertNotIn("serial-comma", rules("In addition, you can start and stop the service."))
+
+    def test_long_sentence_starting_with_code_span(self):
+        text = "`gcloud` " + "processes each request and " * 8 + "returns a result."
+        self.assertIn("long-sentence", rules(text))
+
+    def test_hit_enter_is_flagged(self):
+        self.assertIn("banned-word", rules("Then hit Enter to continue."))
+
+    def test_cache_hit_rate_is_allowed(self):
+        self.assertNotIn("banned-word", rules("Check the cache hit rate."))
+
+    def test_cli_flag_is_not_an_em_dash(self):
+        self.assertNotIn("double-hyphen", rules("Pass the --verbose flag."))
+
+    def test_spaced_dimensions_are_flagged(self):
+        self.assertIn("dimensions", rules("Renders at 1280 \u00d7 1024 by default."))
+        self.assertIn("dimensions", rules("Renders at 1280 x 1024 by default."))
+
+    def test_compliant_dimensions_are_clean(self):
+        self.assertNotIn("dimensions", rules("Renders at 1280x1024 by default."))
+
+    def test_missing_unit_space_is_flagged(self):
+        self.assertIn("unit-space", rules("Allocate 64GB of memory."))
+
+    def test_correct_unit_space_is_clean(self):
+        self.assertNotIn("unit-space", rules("Allocate 64 GB of memory."))
+
+    def test_please_is_advisory_not_a_hard_ban(self):
+        found = [f for f in lint_text("Please click Save.") if f.rule == "please"]
+        self.assertTrue(found)
+        self.assertEqual(found[0].level, "info")
 
 
 if __name__ == "__main__":

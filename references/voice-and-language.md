@@ -54,6 +54,27 @@ Avoid:
 
 Contractions (*it's*, *you're*, *don't*) are fine and usually read better. Microsoft pushes them harder than Google does; in developer documentation, use them where they fall naturally and don't force them.
 
+## Requirements vocabulary
+
+| Word | Means |
+|---|---|
+| must | A requirement. Ignoring it breaks something. |
+| must not | A prohibition. |
+| should | A recommendation with real exceptions. Name the exception. |
+| can | An ability or a permission. |
+| might | A possibility. |
+
+Don't use *should* for a requirement. Readers treat it as optional, and Google's word list says to use *must* when you mean a requirement.
+
+## Anthropomorphism
+
+Systems don't want, know, think, see, or decide. Name the mechanism instead.
+
+| Recommended | Not recommended |
+|---|---|
+| The scheduler retries the job three times. | The scheduler decides to try again. |
+| The parser rejects input longer than 4 KB. | The parser doesn't like long input. |
+
 ## Write for a global audience
 
 Most readers of English technical documentation aren't first-language English speakers, and much of this content gets machine-translated.
@@ -78,8 +99,8 @@ Google's rules first. Where Google is silent, Microsoft's bias-free communicatio
 
 | Use | Instead of |
 |---|---|
-| baffling, unexpected, surprising | crazy, insane |
-| final check, quick check | sanity check |
+| complicated, complex, baffling, unexpected (inanimate objects only) | crazy, insane |
+| final check, quick check, confidence check | sanity check |
 | placeholder | dummy variable |
 | slows down, degrades | cripples |
 | doesn't respond, stops responding | hangs |
@@ -104,7 +125,9 @@ Google prefers `primary/replica`; Microsoft prefers `primary/subordinate`. Follo
 
 ### Violent and militaristic language
 
-Avoid *kill*, *abort*, *terminate*, *hit*, *hang*, *execute*, and military metaphors. Use *stop*, *exit*, *cancel*, *end*, *click*, *press*, *doesn't respond*, *run*.
+Avoid *kill*, *abort*, *hit*, *hang*, and military metaphors. Use *stop*, *exit*, *cancel*, *end*, *click*, *press*, *doesn't respond*.
+
+*terminate* and *execute* are the exception Google names itself: where the term carries a specific technical meaning with no accurate synonym, keep it. Elsewhere, *run* is the plainer word.
 
 ### Examples and personas
 

@@ -4,7 +4,8 @@ Source of record: Google developer documentation style guide. Where this file ma
 
 ## Capitalization
 
-- Sentence case for page titles, section headings, table headers, list items, button labels, and UI strings. Capitalize the first word and proper nouns only.
+- Sentence case for page titles, section headings, table headers, list items, and any UI text you write.
+- When you document existing UI, reproduce its label exactly, whatever its case: the **Save All** button stays **Save All**. Capitalize the first word and proper nouns only.
 - Don't use title case, and don't capitalize a common noun to make it look important.
 - Match the capitalization of product names, API names, and code identifiers exactly as they're defined.
 
@@ -18,7 +19,7 @@ Source of record: Google developer documentation style guide. Where this file ma
 - No links inside headings.
 - No numbers to convey sequence—the hierarchy conveys it.
 - Don't stack a heading directly on another heading with no text between them.
-- Don't write "this section". Name the thing, or write "the following sections".
+- Don't stack a heading directly on another heading. Introduce a run of subsections with a sentence: "The following sections describe each step."
 
 ## Lists
 
@@ -39,7 +40,7 @@ Source of record: Google developer documentation style guide. Where this file ma
 
 - **Serial comma.** `Android, iOS, and Windows`
 - **Em dash**—no spaces before or after. Don't overuse it; a colon or parentheses is often better.
-- **En dash**—don't use. Use a hyphen or *to* for ranges. **(Conflicts with Microsoft; Google wins.)**
+- **En dash**—don't use. Use a hyphen or *to* for ranges. **(Microsoft allows one for page ranges and tight space; Google wins.)**
 - **Hyphen**—joins words and connects prefixes. Don't type two hyphens for an em dash.
 - One space after a period, question mark, or colon.
 - Don't use a dash to separate a term from its description. Use a colon: `Example: this is an example`, not `Example - this is an example`.
@@ -81,12 +82,12 @@ Don't inflect a code element. Write "the value of the `ADDRESS` constant", not "
 - Spell out a number that starts a sentence, or rewrite the sentence.
 - When two numbers sit together, spell one out: `fifteen 100,000-byte files`.
 - Spell out ordinals: *first*, *fifth*, *twenty-first*. Never `1st` or `5th`.
-- Ranges use a hyphen with no spaces: `2012-2016`. **(Microsoft uses an en dash here; Google wins.)**
+- Ranges use a hyphen with no spaces: `2012-2016`. **(Microsoft writes *from 9 through 17* in prose, en dash only for page ranges; Google wins.)**
 - Commas in numbers of four or more digits: `1,532,784`.
 - Leading zero on decimals below one: `0.3 inches`.
 - Percentages are a numeral plus `%` with no space: `40%`. **(Microsoft writes `40 percent`; Google wins.)** Spell it out only when it starts a sentence.
 - Dimensions have no spaces: `192x192`. **(Microsoft writes `1280 × 1024`; Google wins.)**
-- No space is needed between a numeral and a unit abbreviation in throughput-style values: `50 Mbps` is standard; follow the unit's own convention.
+- Put a nonbreaking space between a numeral and its unit: `64 GB`, `25 mm`, `50 Mbps`. No space for currency, percent, and degrees of an angle: `$10`, `65%`, `180°`. Temperature keeps the space before the degree symbol and none after it: `50 °C`.
 
 ## Dates and times
 
@@ -99,8 +100,51 @@ Don't inflect a code element. Write "the value of the `ADDRESS` constant", not "
 - Date and time together: date first, then time—`2017-04-15 at 3 PM`.
 - Don't use seasons as time markers. Use months or quarters.
 
+## Tables
+
+- Introduce a table with a complete sentence.
+- Sentence case headers, no end punctuation.
+- Keep cells parallel in structure. One idea per cell.
+- No empty cells. Write `N/A` or `None` so the reader knows nothing was lost.
+- Use a table when readers compare items across two axes. Use a list for anything simpler.
+
+## Notices
+
+| Notice | Use for |
+|---|---|
+| Note | Supplementary information the reader can act on later |
+| Caution | Something that can cause data loss, unexpected cost, or a broken state |
+| Warning | Something that can cause injury or irreversible loss |
+
+- State the risk and how to avoid it, not just the risk.
+- One notice at a time. Don't stack two, and don't bury one inside a step.
+- Put the notice before the action it applies to, not after.
+
+## Code blocks
+
+- Tag every fence with its language.
+- Don't include shell prompts (`$`, `>`). Readers copy the whole line.
+- Don't mix a command and its output in one block. Separate them and introduce each.
+- Uppercase placeholders: `PROJECT_ID`, `REGION`. Explain each one after the block.
+- Mark truncation with `...` on its own line and say what you cut.
+
+## Abbreviations
+
+- Expand on first use, then use the abbreviation consistently.
+- No periods in an all-caps abbreviation: `US`, not `U.S.`
+- Choose *a* or *an* by how the abbreviation is spoken: *an SLO*, *a URL*.
+- Don't expand an abbreviation you use only once. Use the full term instead.
+- Pluralize without an apostrophe: `APIs`, not `API's`.
+
+## Quotation marks and possessives
+
+- Punctuation goes inside a closing quotation mark in American English, unless it would change a literal string.
+- Form the possessive of a singular noun ending in s with `'s`: the class's method.
+- Don't make a possessive out of a code element. Write "the value of the `ADDRESS` constant".
+
 ## Images
 
-- Every image needs alt text that conveys the information the image carries.
+- Every image that carries information needs alt text conveying that information. A purely decorative image takes empty alt text (`alt=""`), not a description.
+- Don't rely on position or color to carry meaning. Write "the preceding table", not "the table above"; name a control instead of "the button on the left"; pair any color cue with a label or shape.
 - Any information that only exists inside an image is lost to translation and to screen readers. Put it in text.
 - Supply high-resolution or vector images where practical.
