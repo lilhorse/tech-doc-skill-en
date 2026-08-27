@@ -116,7 +116,7 @@ Examples:
 ### Mechanics
 
 - Sentence case for page titles and section headings.
-- Standard American spelling and punctuation. Serial comma.
+- Standard American spelling and punctuation, unless the project sets another locale. Serial comma.
 - Code font for code-related text. Bold for UI element names.
 - Descriptive link text. Never *click here*, *this link*, or a bare URL.
 - Unambiguous dates. Alt text on every image.
@@ -229,7 +229,7 @@ To establish conventions for a project, adapt [Project overrides](references/pro
 ## Reference routing
 
 - Tone, person, voice, tense, must/should/can, anthropomorphism, translation-readiness, inclusive language: read [Voice and language](references/voice-and-language.md)
-- Capitalization, punctuation, headings, lists, tables, notices, code blocks, links, code font, UI elements, numbers, dates, units, abbreviations: read [Mechanics and formatting](references/mechanics-and-formatting.md)
+- Spelling, locale, capitalization, punctuation, headings, lists, tables, notices, code blocks, links, code font, UI elements, numbers, dates, units, abbreviations: read [Mechanics and formatting](references/mechanics-and-formatting.md)
 - A specific word to keep or replace: read [Word list](references/word-list.md)
 - Numbered steps, prerequisites, API reference descriptions, error text: read [Procedures and API reference](references/procedures-and-api.md)
 - Establishing a target project's own conventions: read [Project overrides](references/project-overrides-example.md)

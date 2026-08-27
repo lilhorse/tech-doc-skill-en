@@ -2,6 +2,32 @@
 
 Source of record: Google developer documentation style guide. Where this file marks a rule **(Microsoft)**, Google is silent and Microsoft supplies the answer.
 
+## Spelling and locale
+
+Google requires standard American spelling and punctuation, and says to write developer
+documentation in US English. That is this skill's default, and it is also the rule a project
+overrides most often.
+
+Check the project's own convention before you change a single spelling. A project that
+serves a British, Irish, Australian, Indian, or Canadian audience may have chosen its locale
+deliberately, and rule priority puts that choice above both guides.
+
+These are what the choice governs:
+
+| Aspect | US default | Common alternative |
+|---|---|---|
+| Verb endings | organize, analyze | organise, analyse |
+| Noun endings | color, behavior | colour, behaviour |
+| `-er` and `-re` | center, meter | centre, metre |
+| Doubled consonants | labeled, modeling | labelled, modelling |
+| Noun and verb split | license (both) | licence (noun), license (verb) |
+
+Three things hold whatever the locale:
+
+- Name the variant, not just "British". Oxford style uses `-ize` where Guardian style uses `-ise`, so "en-GB" alone doesn't settle a spelling.
+- Apply one locale across a document set. A page that mixes them reads as unedited.
+- Never respell code, identifiers, API names, configuration keys, or quoted source text. `initialize()` stays `initialize()` in every locale.
+
 ## Capitalization
 
 - Sentence case for page titles, section headings, table headers, list items, and any UI text you write. Capitalize the first word and proper nouns only.

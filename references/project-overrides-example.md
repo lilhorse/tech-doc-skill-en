@@ -22,7 +22,8 @@ Use the left column everywhere, including headings and UI text:
 
 ### Spelling and locale
 
-- Locale: en-US (default) | en-GB | other: ___
+- Locale: en-US (default) | en-GB | en-AU | other: ___
+- Variant, if not en-US: <Oxford (-ize) | Guardian (-ise) | other>
 - Date format in prose: <default: January 19, 2026>
 - Numeric date format: <default: ISO 8601, 2026-01-19>
 
