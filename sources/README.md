@@ -10,7 +10,7 @@ copy first:
 scripts/refresh_sources.sh
 ```
 
-That writes 70 Google pages and 9 Microsoft pages into the directories below, about 900 KB.
+That writes 70 Google pages and 9 Microsoft pages into the following directories, about 900 KB.
 
 The script fills these:
 

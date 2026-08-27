@@ -13,6 +13,8 @@ Two rule changes on 2026-08-27 introduced defects that every unit test passed:
 
 ## What each test measures
 
+The two tests ask opposite questions, and a skill can pass one while failing the other:
+
 | Test | Fixture | Question |
 |---|---|---|
 | A | `fixture-A.md` | Does the skill remove violations, and does it reach Google's own answer? |
@@ -29,7 +31,7 @@ wrote the rules wrote the test. Each item records its source page, so grep that 
 settle a disputed score.
 
 `answer-key-B.json` lists constructions that are correct as written. Losing one is the
-signal; there is no credit for style.
+signal, and style earns no credit.
 
 ## Protocol
 

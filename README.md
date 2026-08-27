@@ -26,6 +26,8 @@ Other agent runtimes read `SKILL.md` the same way. Codex and Gemini CLI look in
 
 ## Layout
 
+The entry point is `SKILL.md`; everything else is loaded on demand or run by hand:
+
 | Path | Contents |
 |---|---|
 | `SKILL.md` | Entry point: authority, scope, rule priority, conflict table, routing |
