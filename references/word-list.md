@@ -66,7 +66,7 @@ These are reserved rather than banned:
 | DMZ, demilitarized zone | Use *perimeter network*. |
 | K, M, B for thousand/million/billion | Spell out or give the full number. **(MS)** |
 
-Google's own Recommended examples still contain the comparative *easier*, so don't extend the row above to every form of the word. The prohibition covers *simply*, *It's easy*, *It's that simple*, and *quickly* inside a procedure.
+Google's own Recommended examples still contain the comparative *easier*, so don't extend that row to every form of the word. The prohibition covers *simply*, *It's easy*, *It's that simple*, and *quickly* inside a procedure.
 
 ## Keep these as-is
 

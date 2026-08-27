@@ -238,5 +238,43 @@ class AuditRegressionTests(unittest.TestCase):
         self.assertNotIn("decimal-comma", rules("The price is $0.006653 per vCPU hour."))
 
 
+class StructuralTests(unittest.TestCase):
+    """Rules added after two manual audits found violations the linter missed."""
+
+    def test_table_under_a_heading_needs_an_intro(self):
+        self.assertIn("table-intro", rules("## Layout\n\n| Path | What |\n|---|---|\n| a | b |\n"))
+
+    def test_table_with_an_intro_is_clean(self):
+        text = "The following table lists the endpoints:\n\n| Path | What |\n|---|---|\n| a | b |\n"
+        self.assertNotIn("table-intro", rules(text))
+
+    def test_intro_without_end_punctuation_is_flagged(self):
+        self.assertIn("table-intro", rules("Some prose\n\n| Path | What |\n|---|---|\n| a | b |\n"))
+
+    def test_table_inside_a_fence_is_skipped(self):
+        text = "Template:\n\n```markdown\n## Bad\n\n| Write | Never |\n|---|---|\n| a | b |\n```\n"
+        self.assertNotIn("table-intro", rules(text))
+
+    def test_directional_language_is_flagged(self):
+        for text in ["Written into the directories below.",
+                     "For details, see below.",
+                     "Click the icon on the right-hand side.",
+                     "The table above lists them."]:
+            self.assertIn("directional", rules(text), text)
+
+    def test_numeric_comparisons_are_not_directional(self):
+        for text in ["Use numerals for 10 and above.",
+                     "Use numerals below 10 for versions.",
+                     "A skilled run below the unskilled baseline matters."]:
+            self.assertNotIn("directional", rules(text), text)
+
+    def test_curly_quotes_are_flagged(self):
+        self.assertIn("curly-quotes", rules("He said \u201chello\u201d to me."))
+        self.assertIn("curly-quotes", rules("It\u2019s done."))
+
+    def test_straight_quotes_are_clean(self):
+        self.assertNotIn("curly-quotes", rules("He said \"hello\" to me. It's done."))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

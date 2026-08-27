@@ -102,10 +102,20 @@ RULES = [
     ("am-pm", "warning", r"\b\d(?::\d{2})?\s?[ap]\.?m\.?\b", "Use uppercase AM or PM: 3 PM.", 0, False),
     ("am-pm", "warning", r"\b\d(?::\d{2})?(AM|PM)\b", "Put a space before AM or PM: 3 PM.", 0, False),
     ("passive-voice", "warning", r"\b(is|are|was|were)\s+\w+ed\s+by\b", "Passive voice. Name the actor.", CI, False),
+    ("directional", "warning",
+     r"\b(?:tables?|lists?|examples?|sections?|figures?|images?|diagrams?|code|snippets?|steps?"
+     r"|procedures?|paragraphs?|director(?:y|ies)|files?|columns?|rows?)\s+(?:above|below)\b"
+     r"|\b(?:see|shown|described|listed|noted)\s+(?:above|below)\b"
+     r"|\b(?:left|right)-hand side\b",
+     "Don't orient the reader with direction; it fails for screen readers and inverts in RTL. "
+     "Name the thing, or write 'the following'.", CI, False),
+    ("curly-quotes", "warning", r"[\u201c\u201d\u2018\u2019]",
+     "Use straight quotation marks and apostrophes.", 0, False),
     ("double-space", "info", r"(?<=[.?:])  +", "Use one space after a period, question mark, or colon.", 0, True),
 ]
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*?)\s*$", re.MULTILINE)
+TABLE_SEP_RE = re.compile(r"^\s*\|[\s:|-]+\|\s*$")
 SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 LIST_MARKER_RE = re.compile(r"^[\s>]*(?:[-*+]|\d+\.)?\s*")
 LONG_SENTENCE_WORDS = 32
@@ -182,6 +192,22 @@ def lint_text(text: str, path: str = "<stdin>") -> list[Finding]:
         if _looks_title_case(heading):
             findings.append(Finding(path, line, column, "info", "heading-case",
                                     "Use sentence case for headings.", heading[:60]))
+
+    lines = masked.split("\n")
+    offset, starts = 0, []
+    for line in lines:
+        starts.append(offset)
+        offset += len(line) + 1
+    for i, line in enumerate(lines):
+        if not line.lstrip().startswith("|"):
+            continue
+        if i + 1 >= len(lines) or not TABLE_SEP_RE.match(lines[i + 1]):
+            continue
+        intro = next((lines[j].strip() for j in range(i - 1, max(-1, i - 4), -1) if lines[j].strip()), "")
+        if not intro or intro.startswith(("#", "|", ">")) or not intro.endswith((".", ":")):
+            line_no, column = _position(text, starts[i])
+            findings.append(Finding(path, line_no, column, "warning", "table-intro",
+                                    "Introduce a table with a complete sentence.", line.strip()[:60]))
 
     for match in re.finditer(r"^(?![#>|]).*\S.*$", masked, re.MULTILINE):
         body = LIST_MARKER_RE.sub("", match.group(0))

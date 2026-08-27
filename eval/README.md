@@ -41,6 +41,10 @@ Check the fixtures before you trust a score:
 python3 eval/score.py verify
 ```
 
+Check a document you wrote at `--min-level info`, not `--min-level warning`. Filtering to
+warnings hid a weak opener in this file until a manual audit found it, and the same filter
+hid three long sentences in the reference files before that.
+
 Then give each agent its own copy of the fixture and its own output path:
 
 ```bash
