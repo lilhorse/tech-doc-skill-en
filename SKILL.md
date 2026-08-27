@@ -122,7 +122,7 @@ Follow the Google column. This table lists the differences that actually change 
 | Numeric-only dates | ISO 8601: `2026-04-15` | Spell out the month; numeric form only in locale-aware UI |
 | Register | Conversational but professional; no ad voice | "Write like you speak"; ad-style brevity ("Ready to buy? Contact us.") |
 
-Both guides agree on these, and drafts get them wrong often enough to check: sentence case headings, serial comma, no spaces around em dashes, spell out ordinals (`first`, not `1st`), spell out zero through nine and use numerals for 10 and above, and no periods at the end of headings. They agree on *please* too: omit it from ordinary steps, and keep it where the request genuinely inconveniences the reader or the product is at fault.
+Both guides agree on these, and drafts get them wrong often enough to check: sentence case headings, serial comma, no spaces around em dashes, spell out ordinals (`first`, not `1st`), and spell out zero through nine while using numerals for 10 and above. They agree on *please* too: omit it from ordinary steps, and keep it where the request genuinely inconveniences the reader or the product is at fault.
 
 Microsoft is the right fallback where Google says little: consumer-facing UI and marketing copy, Windows and desktop terminology, and A-Z term entries Google's word list doesn't carry. Google is not silent on inclusive language or global audiences, so don't reach for Microsoft there.
 

@@ -31,7 +31,8 @@ Source of record: Google developer documentation style guide.
 
 - Present tense. Third-person verb form: "Gets the...", not "Will get the..." or "Get the...".
 - Make the first sentence complete, unique, and useful on its own—indexes often extract only that sentence.
-- Don't repeat the class or method name in its own description, and don't start with "This method...".
+- Don't repeat the class name in the first sentence, and don't say "this class will" or "this method does".
+- Don't put a period anywhere but the true end of the first sentence; some generators truncate the summary there.
 - Write *for example*, not *e.g.*—an abbreviation with a period can truncate the extracted first sentence.
 
 ### Opening verbs by member type
@@ -49,8 +50,8 @@ Source of record: Google developer documentation style guide.
 
 - Capitalize the first word and end with a period.
 - Non-boolean parameters start with *The* or *A*.
-- Action-oriented boolean: "If `true`, the cache is bypassed. If `false`, the cached value is returned."
-- State-declaring boolean: "`true` if the record exists; `false` otherwise."
+- Action-oriented boolean: "If true, the cache is bypassed. If false, the cached value is returned." Don't put *true* and *false* in code font or quotation marks here.
+- State-declaring boolean: "True if the record exists; false otherwise."
 - Parameters with defaults: explain each value, then state `Default: <value>`.
 - Give type, unit, allowed range, and whether the parameter is required.
 
@@ -58,7 +59,7 @@ Source of record: Google developer documentation style guide.
 
 - Keep return descriptions short; put the elaboration in the class or method description.
 - Non-boolean: "The bird specified by the given ID."
-- Boolean: "`true` if the bird exists; `false` otherwise."
+- Boolean: "True if the bird exists; false otherwise."
 - Exceptions begin with "If..." when the tool inserts "Throws", and "Thrown when..." when it doesn't.
 
 ### Deprecation

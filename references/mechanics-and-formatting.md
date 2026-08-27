@@ -15,7 +15,8 @@ Source of record: Google developer documentation style guide. Where this file ma
 - Task headings start with a bare infinitive: "Create an instance", not "Creating an instance".
 - Conceptual headings are noun phrases: "Migration to Google Cloud". Don't start them with an *-ing* verb.
 - Don't skip levels (`h2` then `h4`).
-- No period or colon at the end of a heading.
+- Keep punctuation in a heading simple. Punctuation is a sign the heading is too complicated; consider rewriting.
+- No period or colon at the end of a heading. **(MS)**
 - No links inside headings.
 - No numbers to convey sequence—the hierarchy conveys it.
 - Don't use empty headings. Every heading is followed by content.
@@ -105,8 +106,9 @@ Don't inflect a code element. Write "the value of the `ADDRESS` constant", not "
 - Introduce a table with a complete sentence.
 - Sentence case headers, no end punctuation.
 - Keep cells parallel in structure. One idea per cell.
-- No empty cells. Write `N/A` or `None` so the reader knows nothing was lost.
+- A numbered caption takes the form **Table 2.** Description, in sentence case with no final period. Refer to it as "table 2", lowercase.
 - Use a table when readers compare items across two axes. Use a list for anything simpler.
+- Fill every cell. Write `N/A` or `None` rather than leaving one blank. *(Neither guide states this; it's standard practice.)*
 
 ## Notices
 
@@ -123,14 +125,17 @@ Don't inflect a code element. Write "the value of the `ADDRESS` constant", not "
 ## Code blocks
 
 - Tag every fence with its language.
-- Don't include shell prompts (`$`, `>`). Readers copy the whole line.
-- Don't mix a command and its output in one block. Separate them and introduce each.
+- When a block shows multiple lines of input, start each line with the prompt symbol. Suppress it from click-to-copy by other means rather than dropping it.
+- Don't show the current directory path before the prompt.
+- Put input and output in separate blocks, and introduce each: "The output is similar to the following:"
 - Uppercase placeholders: `PROJECT_ID`, `REGION`. Explain each one after the block.
 - Mark truncation with `...` on its own line and say what you cut.
 
 ## Abbreviations
 
-- Expand on first use, then use the abbreviation consistently.
+- Spell it out on first reference, italicizing both the full term and the abbreviation, then use the abbreviation alone.
+- Omit periods in acronyms and initialisms. Keep them in shortened words and in country abbreviations.
+- Don't use an abbreviation as a verb.
 - No periods in an all-caps abbreviation: `US`, not `U.S.`
 - Choose *a* or *an* by how the abbreviation is spoken: *an SLO*, *a URL*.
 - Don't expand an abbreviation you use only once. Use the full term instead.
@@ -138,13 +143,18 @@ Don't inflect a code element. Write "the value of the `ADDRESS` constant", not "
 
 ## Quotation marks and possessives
 
-- Punctuation goes inside a closing quotation mark in American English, unless it would change a literal string.
-- Form the possessive of a singular noun ending in s with `'s`: the class's method.
-- Don't make a possessive out of a code element. Write "the value of the `ADDRESS` constant".
+- Always use straight quotation marks and apostrophes, never curly ones.
+- Single quotation marks are reserved for code examples and for a quotation nested inside another.
+- Commas and periods go inside a closing quotation mark, unless that would change a literal string in code font.
+- Technical writing uses quotation marks sparingly outside of code.
+- Singular noun ending in s takes `'s`: the class's method. Plural noun ending in s takes a bare apostrophe.
+- Don't make a possessive out of a code element, a product name, or a feature name. Write "the value of the `ADDRESS` constant".
 
 ## Images
 
 - Every image that carries information needs alt text conveying that information. A purely decorative image takes empty alt text (`alt=""`), not a description.
-- Don't rely on position or color to carry meaning. Write "the preceding table", not "the table above"; name a control instead of "the button on the left"; pair any color cue with a label or shape.
+- Don't use directional language to orient the reader: not *above*, *below*, or *right-hand side*. It fails for screen readers, and left and right swap in right-to-left languages. Write "the preceding table"; name a control instead of "the button on the left".
+- Keep text contrast at 4.5:1 or better, and don't hide content with `visibility: hidden` or `display: none`.
+- Don't let color alone carry meaning. *(Neither guide states this; it's WCAG 1.4.1.)*
 - Any information that only exists inside an image is lost to translation and to screen readers. Put it in text.
 - Supply high-resolution or vector images where practical.

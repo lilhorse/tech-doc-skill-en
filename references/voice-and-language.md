@@ -40,16 +40,17 @@ Aim for a knowledgeable colleague explaining something, not a brochure and not a
 
 | Too informal | Just right | Too formal |
 |---|---|---|
-| Dude! This API is totally awesome! | This API lets you collect data about user preferences. | The API may enable acquisition of information pertaining to user preferences. |
-| Just garbage-collect, and you're golden. | To clean up, call the `collectGarbage` method. | Completion requires executing an automated memory management function. |
+| Dude! This API is totally awesome! | This API lets you collect data about what your users like. | The API documented by this page may enable the acquisition of information pertaining to user preferences. |
+| Then—BOOM—just garbage-collect, and you're golden. | To clean up, call the `collectGarbage` method. | Please note that completion of the task requires the following prerequisite: executing an automated memory management function. |
 
 Avoid:
 
 - Exclamation marks, humor, wackiness, and internet slang
 - Idioms and figurative language: *ballpark figure*, *on the back burner*, *hang in there*
 - Pop-culture references, holidays, sports, and seasons as time markers
+- Phrasing in terms of *let's do something*
 - Filler openers: *please note*, *at this time*, *it should be noted that*
-- Condescension: *easy*, *simple*, *simply*, *just*, *obvious*, *of course*, *trivial*
+- Condescension: *easy*, *simple*, *simply*, *quickly*, *just*, *It's that simple*, *It's easy*
 - *please* in instructions
 
 Contractions (*it's*, *you're*, *don't*) are fine and usually read better. Microsoft pushes them harder than Google does; in developer documentation, use them where they fall naturally and don't force them.
