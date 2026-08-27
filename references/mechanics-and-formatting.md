@@ -24,6 +24,8 @@ Source of record: Google developer documentation style guide. Where this file ma
 
 ## Lists
 
+Choose the list type from what the content is:
+
 | List type | Use for |
 |---|---|
 | Numbered | A sequence that matters: ordered steps, phases, ranked priorities |
@@ -50,7 +52,16 @@ Source of record: Google developer documentation style guide. Where this file ma
 
 ## Code font
 
-Use code font for: attribute names and values, class names, command output, command-line utility names, data types, database column and row names, constants, DNS record types, element names, enum names, environment variables, filenames, file extensions, paths, folders, HTTP content types, HTTP status codes (`400 Bad Request`), HTTP verbs (`POST`), IAM role names, language keywords, method and function names, namespace aliases, package names, placeholder variables, port numbers, query parameters, strings used in code, and text the reader types.
+Use code font for these:
+
+- Attribute names and values, class names, constants, data types, enum names, and language keywords
+- Method and function names, package names, and namespace aliases
+- Filenames, file extensions, paths, and folders
+- Environment variables, query parameters, and port numbers
+- Command-line utility names, command output, and text the reader types
+- HTTP verbs (`POST`), status codes (`400 Bad Request`), and content types
+- Database column and row names, DNS record types, and IAM role names
+- Element names, placeholder variables, and strings used in code
 
 Don't use code font for: domain names, product names, service names, organization names, and URLs the reader opens in a browser.
 
@@ -111,6 +122,8 @@ Don't inflect a code element. Write "the value of the `ADDRESS` constant", not "
 - Fill every cell. Write `N/A` or `None` rather than leaving one blank. *(Neither guide states this; it's standard practice.)*
 
 ## Notices
+
+Choose the notice from the severity of what can happen:
 
 | Notice | Use for |
 |---|---|

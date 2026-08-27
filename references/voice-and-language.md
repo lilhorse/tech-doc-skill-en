@@ -1,6 +1,6 @@
 # Voice and language
 
-Source of record: Google developer documentation style guide. Microsoft fills the gaps noted below.
+Source of record: Google developer documentation style guide. Microsoft fills the gaps marked in this file.
 
 ## Person
 
@@ -57,6 +57,8 @@ Contractions (*it's*, *you're*, *don't*) are fine and usually read better. Micro
 
 ## Requirements vocabulary
 
+Say exactly what you mean by each of these:
+
 | Word | Means |
 |---|---|
 | must | A requirement. Ignoring it breaks something. |
@@ -98,6 +100,8 @@ Google's rules first. Where Google is silent, Microsoft's bias-free communicatio
 
 ### Ableist language
 
+Replace ableist words with a term that says what you actually mean:
+
 | Use | Instead of |
 |---|---|
 | complicated, complex, baffling, unexpected (inanimate objects only) | crazy, insane |
@@ -109,6 +113,8 @@ Google's rules first. Where Google is silent, Microsoft's bias-free communicatio
 Focus on people, not disabilities: *a reader who is blind*, *a customer with limited dexterity*. Don't write *the disabled*, *suffering from*, *stricken with*, *wheelchair-bound*, *normal*, or *healthy* as the contrast to disabled. Use *nondisabled* or *neurotypical*. Some communities prefer identity-first language (*autistic*, *Deaf*); follow the community's own usage.
 
 ### Socially charged terms
+
+Google's replacements, which differ from Microsoft's in one place:
 
 | Use | Instead of |
 |---|---|
@@ -128,7 +134,7 @@ Google prefers `primary/replica`; Microsoft prefers `primary/subordinate`. Follo
 
 Avoid *kill*, *abort*, *hit*, *hang*, and military metaphors. Use *stop*, *exit*, *cancel*, *end*, *click*, *press*, *not responding*.
 
-Each of these has a narrow technical carve-out in Google's own word list: *abort* is a Linux signal, *kill* survives in command-line syntax, and *terminate* and *execute* keep their meanings in telephony, networking, and SQL. Outside those, use the plain word.
+Each of these has a narrow technical carve-out in Google's own word list. *abort* is a Linux signal, and *kill* survives in command-line syntax. *terminate* and *execute* keep their meanings in telephony, networking, and SQL. Outside those contexts, use the plain word.
 
 ### Examples and personas
 

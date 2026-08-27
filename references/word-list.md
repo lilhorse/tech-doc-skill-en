@@ -4,6 +4,8 @@ Entries from the Google developer documentation style guide word list, plus a fe
 
 ## Replace these
 
+The following entries come from Google's word list unless marked otherwise:
+
 | Don't use | Use instead | Why |
 |---|---|---|
 | abort | stop, exit, cancel, end | Violent metaphor. Google says *avoid in general usage*; the Linux signal keeps its name |
@@ -46,6 +48,8 @@ Entries from the Google developer documentation style guide word list, plus a fe
 | whitelist | allowlist, trustlist, safelist | Charged |
 
 ## Use with care
+
+These are reserved rather than banned:
 
 | Term | Guidance |
 |---|---|

@@ -14,7 +14,7 @@ description: Use when writing, rewriting, editing, proofreading, or reviewing En
 
 Don't attribute a Microsoft rule to Google. When a visible choice rests on Microsoft because Google is silent, say so in your review notes.
 
-## Checking a rule
+## Check a rule
 
 `sources/` holds a plain-text snapshot of both guides, fetched 2026-08-27. Every rule here was
 checked against it. When you're about to rely on a rule, or you disagree with one, grep the
@@ -134,7 +134,14 @@ Follow the Google column. This table lists the differences that actually change 
 | Numeric-only dates | ISO 8601: `2026-04-15` | Spell out the month; numeric form only in locale-aware UI |
 | Register | Conversational but professional; no ad voice | "Write like you speak"; ad-style brevity ("Ready to buy? Contact us.") |
 
-Both guides agree on these, and drafts get them wrong often enough to check: sentence case headings, serial comma, no spaces around em dashes, spell out ordinals (`first`, not `1st`), and spell out zero through nine while using numerals for 10 and above. They agree on *please* too: omit it from ordinary steps, and keep it where the request genuinely inconveniences the reader or the product is at fault.
+Both guides agree on the following, and drafts get them wrong often enough to be worth a check:
+
+- Sentence case headings
+- Serial comma
+- No spaces around an em dash
+- Ordinals spelled out: `first`, not `1st`
+- Zero through nine spelled out, numerals for 10 and above
+- *please* omitted from ordinary steps, and kept where the request genuinely inconveniences the reader or the product is at fault
 
 Microsoft is the right fallback where Google says little: consumer-facing UI and marketing copy, Windows and desktop terminology, and A-Z term entries Google's word list doesn't carry. Google is not silent on inclusive language or global audiences, so don't reach for Microsoft there.
 
@@ -185,7 +192,7 @@ Check the target project's own `CLAUDE.md`, `AGENTS.md`, glossary, brand guide, 
 
 To establish conventions for a project, adapt [Project overrides](references/project-overrides-example.md) and put the resulting file in that project.
 
-## Editing workflow
+## Edit in this order
 
 1. Confirm task mode, content type, audience, and project conventions.
 2. Mark facts, numbers, limits, quotations, and machine-readable content as untouchable.

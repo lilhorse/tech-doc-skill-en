@@ -14,7 +14,7 @@ The rules in this skill were first written from summarized fetches of these page
 produced entries for words the guide doesn't carry, a fabricated example, and a rule
 stated backwards. Grepping the text avoids all three.
 
-## Checking a rule
+## Check a rule
 
 ```bash
 grep -ri "serial comma" sources/

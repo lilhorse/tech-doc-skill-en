@@ -2,15 +2,17 @@
 
 A target project overrides this skill. Copy this template into the project (for example, into its `CLAUDE.md`, `AGENTS.md`, or `docs/STYLE.md`), fill in what actually applies, and delete the rest.
 
-Don't treat the placeholder values below as anyone's real conventions.
+Don't treat the placeholder values in this template as anyone's real conventions.
 
 ```markdown
 ## Documentation style
 
 Base: Google developer documentation style guide, then the Microsoft Writing Style Guide where Google is silent.
-The overrides below beat both.
+The overrides in this section beat both.
 
 ### Product and term names
+
+Use the left column everywhere, including headings and UI text:
 
 | Write | Never write |
 |---|---|

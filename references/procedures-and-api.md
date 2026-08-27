@@ -37,6 +37,8 @@ Source of record: Google developer documentation style guide.
 
 ### Opening verbs by member type
 
+The first verb depends on what the member does:
+
 | Member | Opens with |
 |---|---|
 | Method returning data | Adds..., Creates..., Returns... |
