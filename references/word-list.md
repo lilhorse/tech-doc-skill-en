@@ -19,7 +19,7 @@ The following entries come from Google's word list unless marked otherwise:
 | cripple | slows down, degrades | Ableist |
 | dummy variable | placeholder | Ableist |
 | e.g. | for example | Latin abbreviation; often misread |
-| easy, easily, simple, simply, just | delete, or state the actual steps | "What might be simple for you might not be simple for others" |
+| easy, easily, simple, simply, just | delete, or state the actual steps | In a procedure this is a prohibition. In prose the word list says only "try eliminating this word" |
 | email (as a verb) | send an email | |
 | execute | run | *run* is plainer. Keep *execute* where it's the precise technical term |
 | first-class citizen | higher-order, anonymous, nested | Charged and imprecise |
@@ -65,6 +65,8 @@ These are reserved rather than banned:
 | may | Reserve for official policy and legal wording. Use *can* for permission or ability, *might* for possibility. |
 | DMZ, demilitarized zone | Use *perimeter network*. |
 | K, M, B for thousand/million/billion | Spell out or give the full number. **(MS)** |
+
+Google's own Recommended examples still contain the comparative *easier*, so don't extend the row above to every form of the word. The prohibition covers *simply*, *It's easy*, *It's that simple*, and *quickly* inside a procedure.
 
 ## Keep these as-is
 

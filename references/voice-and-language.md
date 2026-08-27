@@ -50,7 +50,7 @@ Avoid:
 - Pop-culture references, holidays, sports, and seasons as time markers
 - Phrasing in terms of *let's do something*
 - Filler openers: *please note*, *at this time*, *it should be noted that*
-- Condescension: *easy*, *simple*, *simply*, *quickly*, *just*, *It's that simple*, *It's easy*
+- Condescension inside a procedure: *simply*, *quickly*, *It's easy*, *It's that simple*. In ordinary prose these are advisory, and Google's own examples still use *easier*
 - *please* in instructions
 
 Contractions (*it's*, *you're*, *don't*) are fine and usually read better. Microsoft pushes them harder than Google does; in developer documentation, use them where they fall naturally and don't force them.
